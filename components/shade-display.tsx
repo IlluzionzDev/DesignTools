@@ -6,9 +6,13 @@ import styles from './shade-display.module.scss';
 
 export type ShadeDisplayTypes = {
     mainShade: string;
+    copyHash: boolean;
 };
 
-export const ShadeDisplay: React.FC<ShadeDisplayTypes> = ({ mainShade }) => {
+export const ShadeDisplay: React.FC<ShadeDisplayTypes> = ({
+    mainShade,
+    copyHash,
+}) => {
     const { data, error, isLoading } = useScaleContrastChecker(mainShade);
 
     return isLoading ? (
@@ -25,16 +29,12 @@ export const ShadeDisplay: React.FC<ShadeDisplayTypes> = ({ mainShade }) => {
                         key={index}
                         direction="column"
                         alignItems="center"
-                        inlineStyle={{
-                            textAlign: 'center',
-                        }}
+                        textAlign="center"
                         gap={2}
                     >
                         <Flex
-                            inlineStyle={{
-                                background: shade.colour,
-                            }}
                             className={styles.colorDisplay}
+                            background={shade.colour}
                             grow="1"
                             paddingTop={4}
                             paddingBottom={4}
@@ -44,8 +44,12 @@ export const ShadeDisplay: React.FC<ShadeDisplayTypes> = ({ mainShade }) => {
                             alignItems="center"
                             color={index >= 4 ? 'white' : 'black'}
                             direction="column"
-                            onClick={(e) => {
-                                navigator.clipboard.writeText(shade.colour);
+                            onClick={() => {
+                                navigator.clipboard.writeText(
+                                    copyHash
+                                        ? shade.colour
+                                        : shade.colour.substring(1)
+                                );
                             }}
                         >
                             <Flex>{shade.colour}</Flex>

@@ -15,7 +15,7 @@ export const MainNav: React.FC = () => {
             }
             links={[
                 <Link key={1} href="/shade-generator" passHref>
-                    <Label variant="md" className={styles.link}>
+                    <Label variant="button" className={styles.link}>
                         Shade Generator
                     </Label>
                 </Link>,

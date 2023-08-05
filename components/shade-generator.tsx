@@ -1,6 +1,12 @@
 'use client';
 
-import { Button, Flex, TextField } from '@lib/design-system';
+import {
+    Button,
+    CheckboxInput,
+    Flex,
+    Label,
+    TextField,
+} from '@lib/design-system';
 import { useState } from 'react';
 import { ShadeDisplay } from './shade-display';
 import styles from './shade-generator.module.scss';
@@ -20,6 +26,7 @@ function hexToRgb(hex: string) {
 export const ShadeGenerator: React.FC = () => {
     const [mainShade, setMainShade] = useState('#6c6bd1');
     const [mainShadeUse, setMainShadeUse] = useState('#6c6bd1');
+    const [copyUseHash, setCopyUseHash] = useState(true);
 
     const rgb = hexToRgb(mainShade);
 
@@ -58,13 +65,30 @@ export const ShadeGenerator: React.FC = () => {
                 maxLength={7}
                 onChange={(e) => setMainShade(e.currentTarget.value)}
             />
+            <Flex direction="row" gap={2} alignItems="center">
+                <CheckboxInput
+                    id="use-hash"
+                    name="use-hash"
+                    checked={copyUseHash}
+                    onChange={(e) => setCopyUseHash((prev) => !prev)}
+                />
+                <Label variant="md">
+                    Include &apos;#&apos; when copying hex value
+                </Label>
+            </Flex>
+
             <Flex justifyContent="center">
-                <Button variant="primary" onClick={onSetShades} fullWidth>
+                <Button
+                    variant="primary"
+                    onClick={onSetShades}
+                    size="lg"
+                    fullWidth
+                >
                     Generate Shades
                 </Button>
             </Flex>
 
-            <ShadeDisplay mainShade={mainShadeUse} />
+            <ShadeDisplay mainShade={mainShadeUse} copyHash={copyUseHash} />
         </Flex>
     );
 };

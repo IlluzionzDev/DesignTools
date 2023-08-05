@@ -11,6 +11,9 @@ import '@fontsource/poppins/400.css';
 import '@fontsource/poppins/500.css';
 import '@fontsource/poppins/600.css';
 import '@fontsource/poppins/700.css';
+import StyledComponentsRegistry from './registry';
+import { useEffect, useState } from 'react';
+import Head from 'next/head';
 
 export const metadata = {
     title: 'Design Tools',
@@ -38,9 +41,11 @@ export default function RootLayout({
 
     return (
         <html lang="en">
-            <ThemeProvider>
-                <body>{children}</body>
-            </ThemeProvider>
+            <body>
+                <StyledComponentsRegistry>
+                    <ThemeProvider>{children}</ThemeProvider>
+                </StyledComponentsRegistry>
+            </body>
         </html>
     );
 }
