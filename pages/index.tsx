@@ -1,5 +1,5 @@
 import { MainNav } from '@components/nav/main-nav';
-import styles from './page.module.scss';
+import styles from './index.module.scss';
 import { Body, Button, Container, Flex, Heading } from '@lib/design-system';
 import Link from 'next/link';
 

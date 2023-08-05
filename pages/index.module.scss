@@ -1,7 +1,7 @@
 .tool {
     &__card {
         box-shadow: 0px 20px 30px -7px rgba(black, 0.1);
-        transition: 0.2s ease-in-out;
+        transition: background 0.2s ease-in-out;
 
         &:hover {
             background-color: var(--color-elevation-primary-1);

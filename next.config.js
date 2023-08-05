@@ -2,11 +2,7 @@
 const nextConfig = {
     reactStrictMode: true,
     compiler: {
-        styledComponents: {
-            displayName: true,
-            ssr: true,
-            minify: true,
-        },
+        styledComponents: true,
     },
     sassOptions: {
         includePaths: ['./styles', './components'],

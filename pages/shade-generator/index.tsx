@@ -8,7 +8,7 @@ import {
     Nav,
     TextButton,
 } from '@lib/design-system';
-import styles from './page.module.scss';
+import styles from './index.module.scss';
 import Link from 'next/link';
 import { MainNav } from '@components/nav/main-nav';
 
