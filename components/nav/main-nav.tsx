@@ -1,4 +1,9 @@
-import { Heading, Label, Nav, TextButton } from '@lib/design-system';
+import {
+    Heading,
+    Label,
+    Nav,
+    TextButton,
+} from '@illuzionz-studios/design-system';
 import Link from 'next/link';
 import styles from './main-nav.module.scss';
 

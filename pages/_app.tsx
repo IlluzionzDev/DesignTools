@@ -2,7 +2,7 @@
 import '@illuzionz-studios/design-system/styles';
 import '@styles/globals.scss';
 
-import { ThemeProvider } from '@lib/design-system';
+import { ThemeProvider } from '@illuzionz-studios/design-system';
 
 // Font stlying
 import '@fontsource/inter/400.css';

@@ -42,20 +42,20 @@ export function useScaleContrastChecker(
     const colourScale: string[] = createColourScale(mainShade);
 
     const tempShades: ShadeData[] = [];
-    var loading = true;
+    var loading = false;
     var hasError = true;
 
     colourScale.forEach((shade, index) => {
-        const { data, error, isLoading } = useContrastChecker(
-            shade.substring(1, 6),
-            index >= 4 ? 'FFFFFF' : '000000'
-        );
+        // const { data, error, isLoading } = useContrastChecker(
+        //     shade.substring(1, 6),
+        //     index >= 4 ? 'FFFFFF' : '000000'
+        // );
 
-        loading = isLoading;
-        hasError = error;
+        // loading = isLoading;
+        // hasError = error;
         tempShades.push({
             colour: shade,
-            contrast: data as ContrastResponse,
+            contrast: undefined,
         });
     });
 

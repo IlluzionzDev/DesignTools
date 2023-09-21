@@ -6,7 +6,7 @@ import {
     Flex,
     Label,
     TextField,
-} from '@lib/design-system';
+} from '@illuzionz-studios/design-system';
 import { useState } from 'react';
 import { ShadeDisplay } from './shade-display';
 import styles from './shade-generator.module.scss';

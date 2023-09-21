@@ -1,7 +1,7 @@
 'use client';
 
 import { useScaleContrastChecker } from '@lib/contrast-checker';
-import { Box, Flex } from '@lib/design-system';
+import { Box, Flex } from '@illuzionz-studios/design-system';
 import styles from './shade-display.module.scss';
 
 export type ShadeDisplayTypes = {
@@ -54,7 +54,7 @@ export const ShadeDisplay: React.FC<ShadeDisplayTypes> = ({
                         >
                             <Flex>{shade.colour}</Flex>
                         </Flex>
-                        <Flex>Ratio: {shade.contrast?.ratio}</Flex>
+                        {/* <Flex>Ratio: {shade.contrast?.ratio}</Flex>
                         <Flex
                             color={
                                 shade.contrast?.AA == 'pass' &&
@@ -64,7 +64,7 @@ export const ShadeDisplay: React.FC<ShadeDisplayTypes> = ({
                             }
                         >
                             AA: {shade.contrast?.AA}
-                        </Flex>
+                        </Flex> */}
                     </Flex>
                 );
             })}

@@ -7,7 +7,7 @@ import {
     Heading,
     Nav,
     TextButton,
-} from '@lib/design-system';
+} from '@illuzionz-studios/design-system';
 import styles from './index.module.scss';
 import Link from 'next/link';
 import { MainNav } from '@components/nav/main-nav';
